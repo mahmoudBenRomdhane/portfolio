@@ -2,11 +2,18 @@ import React from "react";
 import { Props } from "./types";
 import { IconWrapper, Svg } from "./styles";
 
-const Index = ({ height, path, viewBox, width, xmlns }: Props): JSX.Element => {
+const Index = ({
+  height,
+  path,
+  viewBox,
+  width,
+  xmlns,
+  fill,
+}: Props): JSX.Element => {
   return (
     <IconWrapper>
       <Svg
-        fill="#7819CB"
+        fill={fill}
         xmlns={xmlns}
         viewBox={viewBox}
         width={width}

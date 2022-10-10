@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import Image from "next/image";
 
-export const Svg = styled.svg`
-  fill: ${(props) => props.theme.default.primary};
+export const Svg = styled.svg<{ fill: string }>`
+  fill: ${(props) => props.fill};
 `;
 export const IconWrapper = styled.div`
   display: flex;

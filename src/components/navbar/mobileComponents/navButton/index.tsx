@@ -1,9 +1,13 @@
 import React from "react";
 import { Props } from "./types";
 import { ButtonWrapper, Step } from "./styles";
-const Index = ({}: Props): JSX.Element => {
+const Index = ({ handleSideBar, statue }: Props): JSX.Element => {
   return (
-    <ButtonWrapper>
+    <ButtonWrapper
+      onClick={() => {
+        handleSideBar(statue);
+      }}
+    >
       <Step />
       <Step />
       <Step />

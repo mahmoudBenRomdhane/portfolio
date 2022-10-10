@@ -1,1 +1,4 @@
-export interface Props {}
+export interface Props {
+  handleSideBar: (status: boolean) => void;
+  statue: boolean;
+}
