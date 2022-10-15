@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavBar from "../components/navbar/index";
 import SideBar from "../components/sideBar/index";
 import { ThemeProvider } from "styled-components";
+import HeroSection from "../components/heroSection/index";
 
 const Home: NextPage = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
           handleSideBar(sideBar);
         }}
       />
+      <HeroSection />
       {sideBar && (
         <SideBar
           statue={sideBar}
