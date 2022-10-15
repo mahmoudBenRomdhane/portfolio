@@ -9,6 +9,8 @@ import {
   IntroDescrption,
   IntroImage,
   TripWrapper,
+  TripWrapperMobile,
+  ButtonsGroup,
 } from "./styles";
 import Row from "../../shared/compoenents/row/index";
 import Button from "../../shared/compoenents/Button/index";
@@ -20,22 +22,22 @@ const Index = ({}: Props): JSX.Element => {
       <IntroWrapper>
         <Intro>
           <IntroTitle>Software Developer</IntroTitle>
-          <Row height="7%" />
           <IntroDescrption>
             Hi, Mahmoud ben Romdhane , Full stack Developer working at Arsela
             technologie, Click on Start to Know Me Better
           </IntroDescrption>
-          <Row height="7%" />
-          <Button
-            color="#7819cb"
-            fontColor="#ffffff"
-            fontSize="16px"
-            width="180px"
-            height="45px"
-            text="Contact Me"
-            hoverColor="#aa46bd"
-            Link="Contact Me"
-          />
+          <ButtonsGroup>
+            <Button
+              color="#7819cb"
+              fontColor="#ffffff"
+              fontSize="16px"
+              width="180px"
+              height="45px"
+              text="Contact Me"
+              hoverColor="#aa46bd"
+              Link="Contact Me"
+            />
+          </ButtonsGroup>
           <Row height="21%" />
           <TripWrapper>
             <Colone width="20%" />
@@ -59,6 +61,18 @@ const Index = ({}: Props): JSX.Element => {
           src="/image_processing20210517-25370-1vbkgy4.gif"
         />
       </ImageWrapper>
+      <TripWrapperMobile>
+        <Button
+          color="#ffffff"
+          fontColor="#7819cb"
+          fontSize="32px"
+          width="100%"
+          height="90px"
+          text="Start The Trip 👩‍🚀"
+          hoverColor="#ffffff"
+          Link="Contact Me"
+        />
+      </TripWrapperMobile>
     </Wrapper>
   );
 };
