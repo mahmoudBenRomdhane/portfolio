@@ -1,19 +1,22 @@
 import React from "react";
 import { Props } from "./types";
-import { Text } from "./styles";
+import { Text, TextActive } from "./styles";
 
-const Index = ({ text, id }: Props): JSX.Element => {
-  const selectSection = (): void => {
-    console.log(id);
-  };
+const Index = ({ text, id, active, handleNavigation }: Props): JSX.Element => {
   return (
-    <Text
-      onClick={() => {
-        selectSection();
-      }}
-    >
-      {text}
-    </Text>
+    <>
+      {active === false ? (
+        <Text
+          onClick={() => {
+            handleNavigation(id);
+          }}
+        >
+          {text}
+        </Text>
+      ) : (
+        <TextActive>{text}</TextActive>
+      )}
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Props } from "./types";
 import {
   Wrapper,
@@ -11,18 +11,74 @@ import NavBarItem from "./navItem/index";
 import NavBarIcon from "./navIcon/index";
 import NavButton from "../../components/navbar/mobileComponents/navButton/index";
 import Col from "../../shared/compoenents/col/index";
-const Index = ({ handleSideBar, statue }: Props): JSX.Element => {
+const Index = ({
+  handleSideBar,
+  statue,
+  handleActivePage,
+}: Props): JSX.Element => {
+  const [NavItems, setNavItems] = useState([
+    {
+      text: "Home",
+      active: true,
+      id: "1",
+      handleNavigation: (id: string) => {},
+    },
+    {
+      text: "Carrer",
+      active: false,
+      id: "2",
+      handleNavigation: (id: string) => {},
+    },
+    {
+      text: "Technologies",
+      active: false,
+      id: "3",
+      handleNavigation: (id: string) => {},
+    },
+    {
+      text: "Projects",
+      active: false,
+      id: "4",
+      handleNavigation: (id: string) => {},
+    },
+  ]);
+  const handleActiveElement = (id: string) => {
+    const NavList = [...NavItems];
+    NavList.forEach((item) => {
+      item.active = false;
+    });
+    const index = NavList.findIndex((ele) => {
+      return ele.id === id;
+    });
+    NavList[index].active = true;
+    handleActivePage(NavList[index].id);
+    setNavItems(NavList);
+  };
   return (
     <Wrapper>
       <NameWrapper>
-        <NavBarItem text="Home" id="1" />
+        <NavBarItem
+          text="Home"
+          id="1"
+          active={false}
+          handleNavigation={() => {}}
+        />
       </NameWrapper>
       <Col width="10%" />
       <NavitemsWrapper>
-        <NavBarItem text="navitem" id="1" />
-        <NavBarItem text="navitem" id="1" />
-        <NavBarItem text="navitem" id="1" />
-        <NavBarItem text="navitem" id="1" />
+        {NavItems?.map((ele) => {
+          return (
+            <NavBarItem
+              handleNavigation={() => {
+                handleActiveElement(ele.id);
+              }}
+              text={ele.text}
+              key={ele.text}
+              id={ele.id}
+              active={ele.active}
+            />
+          );
+        })}
       </NavitemsWrapper>
       <Col width="39%" />
       <IconsWrapper>

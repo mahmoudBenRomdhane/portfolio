@@ -11,3 +11,14 @@ export const Text = styled.div`
     color: ${(props) => props.theme.default.primaryHover};
   }
 `;
+export const TextActive = styled.div`
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: ${(props) => props.theme.default.primary};
+  cursor: pointer;
+  margin-right: 20px;
+  :hover {
+    color: ${(props) => props.theme.default.primaryHover};
+  }
+`;
