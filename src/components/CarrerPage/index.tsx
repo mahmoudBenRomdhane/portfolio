@@ -1,7 +1,7 @@
-import HeroSection from "../heroSection/index";
+import RoadMap from "../roadMap";
 
 const Home = (): JSX.Element => {
-  return <>carrer</>;
+  return <RoadMap />;
 };
 
 export default Home;
